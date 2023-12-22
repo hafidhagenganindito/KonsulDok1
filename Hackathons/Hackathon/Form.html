@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>KonsulDok</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header id="header" class="d-flex align-items-center" style="position: fixed; width: 100% ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><img  src="assets/img/Capture-removebg-preview.png" alt=""></a></h1>      
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="Nama_Dokter.html">Kembali</a></li>         
+        <ul>                        
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
+    </div>
+  </header>
+    <section id="hero" style="height: 250px;">  
+
+        <div class="carousel-item active" style="background-image: url(assets/img/bg.jpg)">
+          <div class="carousel-container">
+            <div class="container" style=" margin-top: 50px;">
+              <h2>Masukan Data Diri Anda</h2>             
+            </div>
+            </div>
+          </div>       
+
+      </div>
+  </section>  
+  <div class="container" style="margin-top: 50px; width: 50%; border: 2px solid rgb(141, 138, 138); padding: 80px; margin-bottom: 100px;" id="form">
+  <form>
+    <div class="mb-3">
+      <label for="nama" class="form-label" >Nama</label>
+      <input  class="form-control" placeholder="Masukan Nama Anda" required name="nama">
+         </div>
+    <div class="mb-3">
+      <label for="umur" class="form-label">Umur</label>
+      <input class="form-control" placeholder="Masukan Umur" required name="umur" type="number">
+    </div>
+    <div class="mb-3">
+      <label for="noHp" class="form-label">No Hp</label>
+      <input class="form-control" placeholder="Masukan Nomor Hp" required name="noHp">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label" >Email</label>
+      <input  class="form-control" placeholder="Masukkan email anda" required name="email" type="email">
+         </div>   
+    <div class="mb-3">
+      <label for="keluhan" class="form-label">Keluhan</label>
+      <textarea rows="3" class="form-control" placeholder="Masukan Keluhan" required name="keluhan"></textarea>
+    </div> 
+    <div class="mb-3">
+      <label for="s&k" class="form-label">
+        <input type="checkbox" placeholder="Masukan Keluhan" required name="s&k" style="margin-right: 10px;"></input><a href="" target="_blank">Syarat dan Ketentuan</a>
+      </label>
+    </div> 
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div style=" height:  570px; width: 50%; margin: 0 auto; margin-bottom: 20px; margin-top: 50px; padding: 20px; border: 2px solid black;" class="hide" id="proof">
+  <img style="width: 300px;" src="./assets/img/Capture-removebg-preview.png" alt=""> <h3>------------------------------------------------------------</h3>
+   <h3 style="text-align:left;">Terimakasih telah memilih konsulDok untuk layanan konsultasi anda </h3>
+   <h3>------------------------------------------------------------</h3>
+   
+   <h4>Nama : <span id="nama"></span></h4> <br> <br>---------------------------------------------------------------------------------------------------------------  
+   <h4>Dokter: <span id="dokter"></span></h4> <br><br>---------------------------------------------------------------------------------------------------------------
+   <h4>Jadwal: <span id="jadwal"></span></h4><br><br>
+ 
+ 
+</div>
+ 
+ 
+<div style="margin: 0 auto ;  text-align: center; padding-bottom:50px; font-size: 20px;" class="hide" id="ok">
+<li style="list-style: none;"><button style="width: 11%;" class="btn btn-success"><a href="./index.html">Ok</a></button></li>
+</div>
+
+<script>
+
+const dokter = {
+    '1': "Dr.Nadia Kirana Sp.JP",
+    '2': "Dr.Sarah Sehan Sp.JP",
+    '3': "Dr.Abullah Salim Sp.JP",
+    '4': "Dr.Berliana Murni Sp.A",
+    '5': "Dr.Maria Johnson Sp.A",
+    '6': "Dr.Lewis Dunk Sp.A",
+    '7': "Dr. Heung-Min-Son Sp.THT",
+    '8': "Dr. Budi Permono Sp.THT",
+    '9': "Dr.Yunita Sari Sp.THT",
+    '10': "Dr Chris Edwin SpK",
+    '11': "Dr.Aldo Saputra Spk",
+    '12': "Dr.Geraldine Putri SpK",
+    '13': "Dr. Indah Purnama Sp.M",
+    '14': "Dr.William Hartono Sp.M",
+    '15': "Dr.Kim-Min-Jae Sp.M",
+    '16': "Dr.Amar Saputra Sp.P",
+    '17': "Dr.Mawar Melati Sp.P",
+    '18': "Dr.Bagus Salim Sp.P"
+}
+
+// DOME
+const submit = document.querySelector("form");
+submit.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const data = new FormData(submit)
+  const obj = Object.fromEntries(data);
+  console.log(obj);
+  const json = JSON.stringify(obj)
+  localStorage.setItem("data",json)
+  document.getElementById("proof").classList.remove("hide")
+  document.getElementById("ok").classList.remove("hide")
+  document.getElementById("form").classList.add("hide")
+
+  const id = localStorage.getItem("id")
+  const jadwal = localStorage.getItem("jadwal")
+
+  document.getElementById("nama").innerHTML = obj.nama
+  document.getElementById("dokter").innerHTML = dokter[id]
+  document.getElementById("jadwal").innerHTML = jadwal
+  alert("Reservasi anda telah dipesan dan akan dikirim ke email anda.")
+})
+
+</script>
+</body>
+
+</html>

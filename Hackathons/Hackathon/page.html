@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- onclick utk memberikan perintah apabila element itu diclick -->
+    <!-- Utk ngakses semua file html -->
+    <!-- Utk ngakses semua file html -->
+    <p onclick="document.querySelector('body').style.backgroundColor ='black'">
+      Klik ini
+    </p>
+    <p
+      style="color: white"
+      onclick="document.querySelector('body').style.backgroundColor ='white'"
+    >
+      Klik ini
+    </p>
+    <p id="alerts">Click</p>
+
+    <p id="nama"></p>
+
+    <!-- Utk membuat pengaturan JS di dalam file HTML -->
+    <script>
+      let nama = prompt("Masukan nama anda");
+      document.getElementById("nama").innerHTML = nama;
+
+      const alerts = document.getElementById("alerts");
+      alerts.addEventListener("click", () => {
+        alert("Hola Everyone"); // Utk nama alert di function tdk boleh sama dgn nama alert di id atau di Var.
+      });
+    </script>
+  </body>
+</html>
